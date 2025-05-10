@@ -375,11 +375,15 @@ public class Main {
         View footer = new View("Footer");
         footer.setLayoutParams(new View.LayoutParams(View.LayoutParams.MATCH_PARENT, 150));
 
+        ViewGroup contentWrapper = new ViewGroup("ContentWrapper");
+        contentWrapper.setLayoutParams(new View.LayoutParams(500, View.LayoutParams.WRAP_CONTENT));
+
         content.addView(item1);
         content.addView(item2);
+        contentWrapper.addView(content);
 
         root.addView(header);
-        root.addView(content);
+        root.addView(contentWrapper);
         root.addView(footer);
 
         // 模拟一个屏幕尺寸
